@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../dist/output.css"> <!-- Assuming output.css is in the parent directory of your HTML file -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    .carousel-item:hover .carousel-controls {
+        opacity: 1;
+    }
+
+    .carousel-item:hover .overlay {
+        opacity: 1;
+    }
+
+    .carousel-item {
+        transition: background-color 0.3s ease;
+    }
+
+    
+
+    .carousel-controls {
+        transition: opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .overlay {
+        transition: opacity 0.3s ease;
+        opacity: 0;
+    }
+    
+</style>
+</head>
+
+<body>
+  <main class="w-full bg-[#f8f5f3] h-auto flex flex-wrap overflow-x-hidden  relative">
+    <header class="flex flex-wrap overflow-x-hidden h-auto relative">
+
+
+      <div class="w-full h-auto border-b-2 border-black">
+        <div class="topheader bg-white w-full h-[70px] md:h-[40px] p-0 sticky z-100 top-0 flex justify-center items-center">
+          <div class="w-full relative h-[40px] m-0 pt-2">
+            <div class="swiper progress-slide-carousel swiper-container relative">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="bg-white flex justify-center items-center">
+                    <span class="text-center text-[12px] md:text-xl font-semibold text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, at!</span>
+                  </div> 
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg-white flex justify-center items-center  relative">
+                    <span class="text-[12px] md:text-xl font-semibold text-black text-center">Lorem ipsum dolor sit amet.</span>
+                  </div> 
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg-white flex justify-center items-center">
+                    <span class="text-center text-[12px] md:text-xl font-semibold text-black">Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="navbar w-full h-[140px] z-50 top-0 sticky bg-white flex justify-between ">
+          <div class="hambar w-[33%] relative h-full ">
+            <div class="w-full h-full bg-white flex flex-col justify-center">
+              <div class="relative  sm:max-w-xl ml-10 mt-4">
+                  <nav x-data="{ open: false }">
+                      <button id="menuButton" class=" w-10 h-10 relative focus:outline-none bg-[white] rounded" onclick="toggleMenu()" @click="open = !open">
+                          <div class="block w-5 absolute left-4 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">
+                              <span  class="block absolute h-0.5 w-7 text-black bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+                              <span  class="block absolute  h-0.5 w-5 text-black bg-current   transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+                              <span  class="block absolute  h-0.5 w-7 text-black bg-current transform  transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+                          </div>
+                      </button>
+                  </nav>
+              </div>
+          </div>
+        </div>
+
+          <div class="text-[40px] sm:text-[50px] md:text-[60px] w-[33%] h-full font-semibold border-none text-black  text-center mt-[7%] md:mt-[1%]">brand</div>
+          <div class="bar w-[33%] h-full relative">
+
+            <div class=" w-[50%] sm:w-[30%] lg:w-[25%] absolute right-[10%] h-[35px] top-[50%] border-none flex justify-between">
+              <a href="" class="w-[33%] h-full ">              <i class=" w-[33%] h-full bg-white  border-none">
+                <img src="img/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" class="w-full h-full bg-white " alt="search">
+              </i></a>
+              <a href="" class="w-[33%] h-full ">              <i class=" w-[33%] h-full bg-white  border-none">
+                <img src="img/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" class="w-full h-full bg-white " alt="person">
+              </i></a>
+              <a href="" class="w-[33%] h-full ">              <i class=" w-[33%] h-full bg-white  border-none">
+                <img src="img/local_mall_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" class="w-full h-full bg-white " alt="shop">
+              </i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="dropMenu" class=" max-w-screen absolute max-lg:h-auto lg:h-[70vh] border-t-[1px] border-[black] p-24 top-[180px] z-[-1] bg-slate-100" >
+        <div class="lg:grid max-lg:text-[12px] lg:grid-cols-5 px-12 max-lg:flex max-lg:flex-wrap">
+            <div class="max-lg:w-full">
+                <h2 class="font-semibold text-lg mb-4">group1</h2>
+                <ul class="space-y-2 max-lg:flex max-lg:flex-wrap max-lg:gap-6 max-lg:items-center">
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">li 1</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">li 2</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">li 3</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">li 4</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">li 5</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">li 6</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">li 7</a></li>
+                </ul>
+            </div>
+            <div class="max-lg:w-full">
+              <h2 class="font-semibold text-lg mb-4">group2</h2>
+                <ul class="space-y-2 max-lg:flex max-lg:flex-wrap max-lg:gap-6 max-lg:items-center">
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 1</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 2</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 3</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 4</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 5</a></li>
+                </ul>
+            </div>
+            <div class="max-lg:w-full">
+              <h2 class="font-semibold text-lg mb-4">group3</h2>
+                <ul class="space-y-2 max-lg:flex max-lg:flex-wrap max-lg:gap-6 max-lg:items-center">
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 1</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 2</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 3</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900">li 4</a></li>
+                </ul>
+            </div>
+            <div class="mb-8 col-span-1 ml-[-10%] relative max-lg:w-full max-lg:ml-1 max-lg:mt-5">
+                <img src="img/Oles_G003-Jumper-21797G003-0312_Beetle_400x.webp" alt="New Arrivals" class="rounded mb-2 object-cover w-[30%] lg:w-[70%] h-auto">
+                <h3 class="font-semibold text-lg">New Arrivals</h3>
+                <a href="#" class="text-[#edca5c] hover:underline">Shop now</a>
+            </div>
+            <div class="col-span-1 max-lg:w-full  max-lg:ml-1 max-lg:mt-5 ">
+                <img src="img/Aarhus_G029_T-shirt-Short_Sleeved_T-shirt-17066G029-0213_Tea_400x.webp" alt="Artwork Tees" class="rounded max-lg:w-[30%] mb-2">
+                <h3 class="font-semibold text-lg">Artwork Tees</h3>
+                <a href="#" class="text-[#edca5c] hover:underline">Shop now</a>
+            </div>
+        </div>
+    </div>
+
+
+      <div class="dresstokill bg-[#f8f5f3] relative w-full  h-[77vh] py-[5%] lg:py-[1%] px-[1.5%] flex justify-between">
+        <div class="w-[97%] absolute lg:w-[43%]  h-full">
+          <img src="img/premium_photo-1689977493146-ed929d07d97e.avif" alt="header pic" class="h-full w-full object-cover">
+        </div>
+        <div class=" w-[50%]  animate-customAni absolute left-[55%] xl:left-[55%] lg:left-[60%] h-full pt-12">
+          <h1 class="text-center md:text-left  max-[1200]:flex   text-[60px] sm:text-[75px] xl:text-[90px] 2xl:text-[100px]  mt-[60%] sm:mt-[30%] xl:mt-[20%] 2xl:mt-[10%]">lorem</h1>
+          <h1 class="text-center md:text-left  max-[1200]:flex  text-[60px]  sm:text-[75px] xl:text-[90px] 2xl:text-[100px] min-[1390]:ml-[10%]  md:mt-[2%]">Lorem, ipsum.</h1>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="firstprg  h-auto md:h-[600px] w-full bg-[#f8f5f3] flex items-center justify-center">
+        <div class=":w-[60%] h-[80%] text-[20px] md:text-[30px] p-12">
+          <h3 class="text-[#edca5c] text-center md:text-left text-[30px] md:text-[40px] mt-10">"Lorem, ipsum dolor"</h3>
+          <p class="mt-1 text-black  text-center md:text-left">dipisicing elit. Tenetur odio totam iure neque molestiae! Accusamus dolor accusantium doloremque sequi dolores, magni natus fugit, fuga unde laudantium temporibus necessitatibus, harum nostrum quod adipisci eius sunt ducimus nihil voluptas asperiores rem nam.</p>
+        </div>
+      </div>
+
+
+      <div class="logopg bg-[#f8f5f3] mt-[30%] md:mt-0 h-[200px] w-full flex items-center justify-center">
+        <img src="" alt="" class="bg-slate-500 w-[100px] h-[100px] mt-[-15%]">
+      </div>
+
+
+      <div class="pg3 bg-[#f8f5f3] w-full md:h-[300px]  h-[600px] mt-[5%] md:mt-[-5%] flex items-center justify-center">
+        <div class="w-[80%] h-full  flex flex-wrap md:flex-nowrap justify-between"> 
+          <div class="h-[100px] w-full  md:w-[25%] md:h-full  flex flex-nowrap ">
+            <i class="h-full w-[12%]  flex items-center">
+              <img src="" alt="" class="w-full h-[40px] bg-slate-800">
+            </i>
+            <div class=" p-12 w-full  ">
+              <h6 class="mt-[-10%] lg:mt-[30%] 2xl:mt-[15%]">title 1</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, molestias.</p>
+            </div>
+          </div>
+          <div class="h-[100px] w-full md:w-[25%] md:h-full  flex flex-nowrap">
+            <i class="h-full w-[12%] flex  items-center">
+              <img src="" alt="" class="w-full h-[40px] bg-slate-800">
+            </i>
+            <div class=" p-12 w-full">
+              <h6 class="mt-[-10%] lg:mt-[30%] 2xl:mt-[15%]">title 4</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, molestias.</p>
+            </div>
+          </div>
+          <div class="h-[100px] w-full md:w-[25%] md:h-full  flex flex-nowrap">
+            <i class="h-full w-[12%] flex items-center">
+              <img src="" alt="" class="w-full h-[40px] bg-slate-800">
+            </i>
+            <div class="p-12 w-full">
+              <h6 class="mt-[-10%] lg:mt-[30%] 2xl:mt-[15%]">title 4</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, molestias.</p>
+            </div>
+          </div>
+          <div class="h-[100px] w-full md:w-[25%] md:h-full  flex flex-nowrap">
+            <i class="h-full w-[12%]  flex items-center">
+              <img src="" alt="" class="w-full h-[40px] bg-slate-800">
+            </i>
+            <div class="p-12 w-full">
+              <h6 class="mt-[-10%] lg:mt-[30%] 2xl:mt-[15%]">title 4</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, molestias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="koleksiyon mt-24  bg-[#f8f5f3] w-full h-[130vh]  flex justify-center">
+        <div class="bg-main bg-cover text-[70px] md:text-[90px] h-full w-[70%] text-white justify-center flex items-center">
+          <h2 class="w-[60%] h-auto break-words text-center">Loremipsumdolorsitamet</h2>
+        </div>
+      </div>
+
+
+      <div class="tshirt mt-24 bg-[#f8f5f3] w-full h-[150px] text-center flex justify-center items-center ">
+        <h6 class="border-b-4 text-center border-[#caa88e] text-[35px]">Tshirt</h6>
+      </div>
+
+      <div class="w-full mt-[5%] bg-[#f8f5f3] h-[90vh]  flex justify-center items-center">
+        <div class="h-full w-[75%] bg-slate-500 max-lg:flex max-lg:flex-wrap lg:grid lg:grid-cols-4 lg:grid-rows-2">
+          <div class="bg-blue-900 max-lg:w-full max-lg:h-[25%] lg:row-span-2 lg:col-span-2">
+            <img src="img/premium_photo-1675186049222-0b5018db6ce9.avif" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="bg-blue-800 max-lg:h-[25%] max-lg:w-full lg:row-span-1 lg:col-span-1">
+            <img src="img/Beatas_9683_Dress-Midi_Dress-230279683-0513_String_400x.webp" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="bg-blue-700 max-lg:h-[25%] max-lg:w-full lg:row-span-1 lg:col-span-1">
+            <img src="img/Jameson_G038_Cardigan-Cardigan-23048G038-0513_String_400x.webp" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="bg-blue-700 max-lg:h-[25%] max-lg:w-full lg:col-span-2 lg:row-span-1">
+            <img src="img/premium_photo-1718913936342-eaafff98834b.avif" class="w-full h-full object-cover" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="tshirt bg-[#f8f5f3] w-full h-[300px] text-center flex justify-center items-center flex-wrap">
+        <h5 class="w-full text-center text-[45px] mt-[8%]">get the look</h5>
+        <h6 class="w-full xl:mt-[2%] text-center mt-[-2%] text-[35px]">#inkstyle</h6>
+      </div>
+
+
+
+      <div class="carousel w-full h-[65vh] overflow-hidden relative px-[4%] mt-12" id="carousel">
+        <div class="carousel-inner h-full flex transition-transform duration-300 ease-in-out gap-4" id="carousel-inner">
+            <!-- Carousel Item 1 -->
+            <div class="carousel-item relative h-full w-full xl:w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+                <div class="w-full h-[85%]">
+                    <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-full overflow-hidden" id="carousel-wrapper">
+                            <!-- Item 1 -->
+                            <div class="w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-1-img">
+                                <img src="img/GalinaTop-MultiPastelSequins.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="w-full h-full hidden object-cover duration-700 ease-in-out" data-carousel-item="active" id="carousel-item-2-img">
+                                <img src="img/GalinaTop-MultiPastelSequins_Detail.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-3-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Back.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-4-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Frontal.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                         </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                        <div class="overlay h-[5%] bottom-0 w-full bg-white absolute flex items-center justify-center">
+                          <div class="text-3xl flex flex-nowrap gap-4">
+                              <p class="text-[12px] text-[#00000080]">XXS</p>
+                              <p class="text-[12px] text-black">XS</p>
+                              <p class="text-[12px] text-[#00000080]">S</p>
+                              <p class="text-[12px] text-[#00000080]">M</p>
+                              <p class="text-[12px] text-black">L</p>
+                              <p class="text-[12px] text-black">XL</p>
+                              <p class="text-[12px] text-[#00000080]">XXL</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
+                    <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
+                    <a href="" class="w-full text text-black">€620</a>
+                </div>
+             </div>
+
+
+             <div class="carousel-item relative max-md:hidden  h-full w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+                <div class="w-full h-[85%]">
+                    <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-full overflow-hidden" id="carousel-wrapper">
+                            <!-- Item 1 -->
+                            <div class="w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-1-img">
+                                <img src="img/GalinaTop-MultiPastelSequins.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="w-full h-full hidden object-cover duration-700 ease-in-out" data-carousel-item="active" id="carousel-item-2-img">
+                                <img src="img/GalinaTop-MultiPastelSequins_Detail.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-3-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Back.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-4-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Frontal.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                        <div class="overlay h-[5%] bottom-0 w-full bg-white absolute flex items-center justify-center">
+                          <div class="text-3xl flex flex-nowrap gap-4">
+                              <p class="text-[12px] text-[#00000080]">XXS</p>
+                              <p class="text-[12px] text-black">XS</p>
+                              <p class="text-[12px] text-[#00000080]">S</p>
+                              <p class="text-[12px] text-[#00000080]">M</p>
+                              <p class="text-[12px] text-black">L</p>
+                              <p class="text-[12px] text-black">XL</p>
+                              <p class="text-[12px] text-[#00000080]">XXL</p>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
+                    <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
+                    <a href="" class="w-full text text-black">€620</a>
+                </div>
+            </div>
+
+
+            <div class="carousel-item relative max-md:hidden h-full w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+                <div class="w-full h-[85%]">
+                    <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-full overflow-hidden" id="carousel-wrapper">
+                            <!-- Item 1 -->
+                            <div class="w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-1-img">
+                                <img src="img/GalinaTop-MultiPastelSequins.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="w-full h-full hidden object-cover duration-700 ease-in-out" data-carousel-item="active" id="carousel-item-2-img">
+                                <img src="img/GalinaTop-MultiPastelSequins_Detail.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-3-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Back.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-4-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Frontal.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                        <div class="overlay h-[5%] bottom-0 w-full bg-white absolute flex items-center justify-center">
+                          <div class="text-3xl flex flex-nowrap gap-4">
+                              <p class="text-[12px] text-[#00000080]">XXS</p>
+                              <p class="text-[12px] text-black">XS</p>
+                              <p class="text-[12px] text-[#00000080]">S</p>
+                              <p class="text-[12px] text-[#00000080]">M</p>
+                              <p class="text-[12px] text-black">L</p>
+                              <p class="text-[12px] text-black">XL</p>
+                              <p class="text-[12px] text-[#00000080]">XXL</p>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
+                    <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
+                    <a href="" class="w-full text text-black">€620</a>
+                </div>
+            </div>
+
+
+            <div class="carousel-item relative max-md:hidden  h-full w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+                <div class="w-full h-[85%]">
+                    <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-full overflow-hidden" id="carousel-wrapper">
+                            <!-- Item 1 -->
+                            <div class="w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-1-img">
+                                <img src="img/GalinaTop-MultiPastelSequins.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="w-full h-full hidden object-cover duration-700 ease-in-out" data-carousel-item="active" id="carousel-item-2-img">
+                                <img src="img/GalinaTop-MultiPastelSequins_Detail.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-3-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Back.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-4-img">
+                                <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Frontal.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                        <div class="overlay h-[5%] bottom-0 w-full bg-white absolute flex items-center justify-center">
+                          <div class="text-3xl flex flex-nowrap gap-4">
+                              <p class="text-[12px] text-[#00000080]">XXS</p>
+                              <p class="text-[12px] text-black">XS</p>
+                              <p class="text-[12px] text-[#00000080]">S</p>
+                              <p class="text-[12px] text-[#00000080]">M</p>
+                              <p class="text-[12px] text-black">L</p>
+                              <p class="text-[12px] text-black">XL</p>
+                              <p class="text-[12px] text-[#00000080]">XXL</p>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
+                    <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
+                    <a href="" class="w-full text text-black">€620</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+    
+      <div class="email w-full h-[300px]  mt-[5%] text-center flex justify-center items-center">
+        <div class="w-[80%] py-5 h-full bg-slate-100">
+          <h1 class="text-4xl font-light mt-[10%] xl:mt-12">
+            Don't miss a <span class="italic">thread</span>
+          </h1>
+          <form class="mt-6 flex justify-center items-center space-x-2">
+            <input type="email" placeholder="Your Email" class="border-b border-black max-sm:text-[12px]  max-sm:w-[170px] py-2 px-4 focus:outline-none focus:border-b-2">
+            <button type="submit" class="border border-black py-2 max-sm:text-[12px] px-4 flex max-sm:w-[100px] items-center justify-center">
+              SUBSCRIBE <span class="ml-2">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+
+      <footer class="max-sm:text-[12px]  py-8 w-full bg-white mt-[10%] max-lg:h-auto  h-[280px] flex flex-wrap">
+        <div class="container w-full mx-auto px-[10%] full border-b-2 border-x-black">
+          <div class="max-lg:flex max-lg:flex-wrap lg:grid lg:grid-row-3 lg:grid-cols-7 ">
+    
+            <div class=" max-lg:w-full lg:col-span-4">
+              <h2 class="font-semibold text-lg">STORE NAME</h2>
+              <address class="not-italic mt-2">
+                write address <br>
+                write address
+              </address>
+            </div>
+    
+            <div class="max-lg:mt-5 max-lg:w-full  lg:col-span-1">
+              <ul class="space-y-2 max-lg:flex flex-nowrap max-lg:gap-5 max-lg:items-center">
+                <li>
+                  <a href="#" class="flex items-center space-x-2">
+                    <i><img src="img/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="w-[18px] h-auto"></i>
+                    <span>Contact</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center space-x-2">
+                    <i><img src="img/shopping_bag_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="w-[18px] h-auto"></i>
+                    <span>Boutiques</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+    
+
+            <div class="max-lg:pl-0 max-lg:mt-5  max-lg:w-full pl-6 lg:col-span-1">
+              <ul class="space-y-2 max-lg:flex flex-nowrap max-lg:gap-5 max-lg:items-center">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Terms</a></li>
+              </ul>
+            </div>
+    
+            <div class="max-lg:mt-5 max-lg:w-full lg:col-span-1 ">
+              <ul class="space-y-2 max-lg:flex flex-nowrap max-lg:gap-5 max-lg:items-center">
+                <li><a href="#" class="ml-2 lg:ml-0">Atelier</a></li>
+                <li><a href="#" class="ml-2 lg:ml-0">Press</a></li>
+                <li><a href="#" class="ml-2 lg:ml-0">Accessibility</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="max-lg:w-full flex items-center max-lg:mb-5 space-x-4 mt-[5%]">
+              <img src="path-to-verified-badge.png" alt="Verified Badge" class="h-8">
+              <span>SECURE CHECKOUT</span>
+              <img src="path-to-amex.png" alt="AMEX" class="h-8">
+              <img src="path-to-visa.png" alt="VISA" class="h-8">
+              <img src="path-to-discover.png" alt="Discover" class="h-8">
+            </div>
+        </div>
+
+        <div class="w-full h-[60px] mt-[-2%] px-[10%] flex flex-nowrap gap-3 shrink">
+          <div class="flex justify-between mt-[3%] items-center w-[20%]">
+            <div class="flex items-center flex-nowrap gap-1">
+              <a class="w-[25%]" href="#"><img src="img/facebook-svgrepo-com.svg" alt="Facebook" class="h-6"></a>
+              <a class="w-[25%]" href="#"><img src="img/instagram-svgrepo-com.svg" alt="Instagram" class="h-6"></a>
+              <a class="w-[25%]" href="#"><img src="img/twitter-boxed-svgrepo-com.svg" alt="Twitter" class="h-6"></a>
+              <a class="w-[25%]" href="#"><img src="img/telegram-svgrepo-com.svg" alt="telegram" class="h-6"></a>
+            </div>
+          </div>
+    
+          <div class="mt-8 sm:mt-12 flex justify-center items-center text-sm text-gray-600  w-[60%]">
+            <span>©2024 store name</span>
+          </div>
+
+          <div class="mt-8 sm:mt-12 flex justify-between items-center text-[12px] text-gray-600 w-[20%]">
+            <span>powered by sahar pourghasemi</span>
+          </div>
+        </div>
+      </footer>
+    </header>
+  </main>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  <script>
+
+
+
+    function toggleMenu() {
+            const button = document.getElementById('menuButton');
+            const dropMenu = document.getElementById('dropMenu');
+
+            if (button.classList.contains('open')) {
+                button.classList.remove('open');
+                dropMenu.style.zIndex = -1;
+            } else {
+                button.classList.add('open');
+                dropMenu.style.zIndex = 100;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const carousels = document.querySelectorAll('[data-carousel="static"]');
+    carousels.forEach(carousel => initializeCarousel(carousel));
+});
+
+function initializeCarousel(carousel) {
+    const items = carousel.querySelectorAll('[data-carousel-item]');
+    const prevButton = carousel.querySelector('[data-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-carousel-next]');
+    let activeIndex = 0;
+
+    function updateCarousel() {
+        items.forEach((item, index) => {
+            if (index === activeIndex) {
+                item.classList.remove('hidden');
+                item.classList.add('block');
+            } else {
+                item.classList.remove('block');
+                item.classList.add('hidden');
+            }
+        });
+    }
+
+    prevButton.addEventListener('click', () => {
+        activeIndex = (activeIndex > 0) ? activeIndex - 1 : items.length - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        activeIndex = (activeIndex < items.length - 1) ? activeIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    updateCarousel();
+}
+
+
+
+
+
+  </script>
+</body>
+</html>

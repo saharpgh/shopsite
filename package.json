@@ -1,8 +1,9 @@
 {
   "devDependencies": {
-    "tailwindcss": "^3.4.4"
+    "tailwindcss": "^3.4.6"
   },
   "dependencies": {
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "tw-elements": "^2.0.0"
   }
 }

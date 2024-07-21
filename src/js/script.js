@@ -10,3 +10,4 @@ var swiper = new Swiper(".progress-slide-carousel", {
     type: "progressbar",
   },
   });
+  
