@@ -604,10 +604,6 @@ video {
   position: static;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -668,16 +664,8 @@ video {
   z-index: 30;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .z-\[-1\] {
   z-index: -1;
-}
-
-.z-\[1000\] {
-  z-index: 1000;
 }
 
 .col-span-1 {
@@ -793,8 +781,12 @@ video {
   margin-top: 8%;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.ml-\[10\%\] {
+  margin-left: 10%;
 }
 
 .block {
@@ -885,12 +877,12 @@ video {
   height: 60px;
 }
 
-.h-\[65vh\] {
-  height: 65vh;
-}
-
 .h-\[70px\] {
   height: 70px;
+}
+
+.h-\[70vh\] {
+  height: 70vh;
 }
 
 .h-\[77vh\] {
@@ -915,10 +907,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[70vh\] {
-  height: 70vh;
 }
 
 .w-0 {
@@ -1174,9 +1162,9 @@ video {
   border-right-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.bg-\[\#ece6e6\] {
+.bg-\[\#F8F7F7\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(236 230 230 / var(--tw-bg-opacity));
+  background-color: rgb(248 247 247 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#f8f5f3\] {
@@ -1233,20 +1221,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[F8F7F7\] {
-  background-color: F8F7F7;
-}
-
-.bg-\[\#F8F7F7\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 247 247 / var(--tw-bg-opacity));
-}
-
-.bg-blue-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-
 .bg-main {
   background-image: url('../src/img/premium_photo-1673356301535-2cc45bcc79e4.avif');
 }
@@ -1264,20 +1238,16 @@ video {
   padding: 0px;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-12 {
   padding: 3rem;
 }
 
 .p-24 {
   padding: 6rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
-}
-
-.p-10 {
-  padding: 2.5rem;
 }
 
 .px-12 {
@@ -1323,6 +1293,16 @@ video {
 .py-\[5\%\] {
   padding-top: 5%;
   padding-bottom: 5%;
+}
+
+.px-\[8\%\] {
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .pl-2 {
@@ -1582,28 +1562,9 @@ a {
   }
 }
 
-@media not all and (min-width: 768px) {
-  .max-md\:bg-white {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-}
-
 @media not all and (min-width: 640px) {
   .max-sm\:left-\[50\%\] {
     left: 50%;
-  }
-
-  .max-sm\:ml-\[-5\%\] {
-    margin-left: -5%;
-  }
-
-  .max-sm\:ml-\[-25\%\] {
-    margin-left: -25%;
-  }
-
-  .max-sm\:ml-\[-35\%\] {
-    margin-left: -35%;
   }
 
   .max-sm\:ml-\[-20\%\] {
@@ -1805,6 +1766,11 @@ a {
   .lg\:py-\[1\%\] {
     padding-top: 1%;
     padding-bottom: 1%;
+  }
+
+  .lg\:px-\[8\%\] {
+    padding-left: 8%;
+    padding-right: 8%;
   }
 }
 
