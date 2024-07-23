@@ -40,7 +40,7 @@
 
 
       <div class="w-full h-auto border-b-2 border-black">
-        <div class="topheader bg-white w-full h-[70px] md:h-[40px] p-0 sticky z-100 top-0 flex justify-center items-center">
+        <div class="topheader  bg-white w-full h-[70px] md:h-[40px] p-0 sticky z-100 top-0 flex justify-center items-center">
           <div class="w-full relative h-[40px] m-0 pt-2">
             <div class="swiper progress-slide-carousel swiper-container relative">
               <div class="swiper-wrapper">
@@ -65,16 +65,16 @@
         </div>
   
   
-        <div class="navbar w-full h-[140px] z-50 top-0 sticky bg-white flex justify-between ">
+        <div class="navbar w-full h-[140px]  bg-white flex justify-between ">
           <div class="hambar w-[33%] relative h-full ">
             <div class="w-full h-full bg-white flex flex-col justify-center">
               <div class="relative  sm:max-w-xl ml-10 mt-4">
                   <nav x-data="{ open: false }">
-                      <button id="menuButton" class=" w-10 h-10 relative focus:outline-none bg-[white] rounded" onclick="toggleMenu()" @click="open = !open">
+                      <button id="menuButton" class=" w-10 h-10 relative max-sm:ml-[-20%] mt-3 focus:outline-none bg-[white] rounded" onclick="toggleMenu()" @click="open = !open">
                           <div class="block w-5 absolute left-4 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">
-                              <span  class="block absolute h-0.5 w-7 text-black bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
-                              <span  class="block absolute  h-0.5 w-5 text-black bg-current   transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
-                              <span  class="block absolute  h-0.5 w-7 text-black bg-current transform  transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+                              <span  class="block absolute h-0.5 w-7 text-black bg-current transform transition-width duration-500 ease-in-out" :class="{'w-0': open,'w-7': !open } "></span>
+                              <span  class="block absolute  h-0.5 w-0 mt-1.5 text-black bg-current   transform transition-width duration-500 ease-in-out" :class="{'w-0': !open,'w-8': open } "></span>
+                              <span  class="block absolute  h-0.5 w-9 mt-3 text-black bg-current transform  transition-width duration-500 ease-in-out" :class="{'w-0': open,'w-9': !open } "></span>
                           </div>
                       </button>
                   </nav>
@@ -149,12 +149,12 @@
 
 
       <div class="dresstokill bg-[#f8f5f3] relative w-full  h-[77vh] py-[5%] lg:py-[1%] px-[1.5%] flex justify-between">
-        <div class="w-[97%] absolute lg:w-[43%]  h-full">
+        <div class="w-[97%] absolute lg:ml-[10%] lg:w-[40%] bg-black h-full">
           <img src="img/premium_photo-1689977493146-ed929d07d97e.avif" alt="header pic" class="h-full w-full object-cover">
         </div>
-        <div class=" w-[50%]  animate-customAni absolute left-[55%] xl:left-[55%] lg:left-[60%] h-full pt-12">
-          <h1 class="text-center md:text-left  max-[1200]:flex   text-[60px] sm:text-[75px] xl:text-[90px] 2xl:text-[100px]  mt-[60%] sm:mt-[30%] xl:mt-[20%] 2xl:mt-[10%]">lorem</h1>
-          <h1 class="text-center md:text-left  max-[1200]:flex  text-[60px]  sm:text-[75px] xl:text-[90px] 2xl:text-[100px] min-[1390]:ml-[10%]  md:mt-[2%]">Lorem, ipsum.</h1>
+        <div class=" w-[50%]  animate-customAni absolute max-sm:left-[50%] left-[45%] xl:left-[55%] lg:left-[60%] h-full pt-12">
+          <h1 class="text-center md:text-left  max-[1200]:flex   text-[60px] sm:ml-[10%] xl:text-[90px] 2xl:text-[100px]  mt-[10%] sm:mt-[30%]   xl:mt-[20%] 2xl:mt-[10%]">lorem</h1>
+          <h1 class="text-center md:text-left  max-[1200]:flex  text-[60px]  sm:ml-[10%] xl:text-[90px] 2xl:text-[100px] min-[1390]:ml-[10%]   md:mt-[2%]">Lorem, ipsum.</h1>
         </div>
         </div>
       </div>
@@ -249,69 +249,69 @@
 
 
 
-      <div class="carousel w-full h-[65vh] overflow-hidden relative px-[4%] mt-12" id="carousel">
+      <div class="carousel w-full h-[70vh] overflow-hidden bg-white p-10 relative px-[4%] mt-12" id="carousel">
         <div class="carousel-inner h-full flex transition-transform duration-300 ease-in-out gap-4" id="carousel-inner">
             <!-- Carousel Item 1 -->
-            <div class="carousel-item relative h-full w-full xl:w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+            <div class="carousel-item relative h-full w-full sm:w-[50%] xl:w-[25%] flex-none bg-[#F8F7F7] text-white text-center p-12" id="carousel-item-1">
                 <div class="w-full h-[85%]">
                     <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-full overflow-hidden" id="carousel-wrapper">
+                        <div class="relative h-full overflow-hidden bg-white" id="carousel-wrapper">
                             <!-- Item 1 -->
-                            <div class="w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-1-img">
+                            <div class="w-full relative h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-1-img">
                                 <img src="img/GalinaTop-MultiPastelSequins.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                             <!-- Item 2 -->
-                            <div class="w-full h-full hidden object-cover duration-700 ease-in-out" data-carousel-item="active" id="carousel-item-2-img">
+                            <div class="w-full relative h-full hidden object-cover duration-700 ease-in-out" data-carousel-item="active" id="carousel-item-2-img">
                                 <img src="img/GalinaTop-MultiPastelSequins_Detail.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                             <!-- Item 3 -->
-                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-3-img">
+                            <div class="hidden relative w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-3-img">
                                 <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Back.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                             <!-- Item 4 -->
-                            <div class="hidden w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-4-img">
+                            <div class="hidden relative w-full h-full object-cover duration-700 ease-in-out" data-carousel-item id="carousel-item-4-img">
                                 <img src="img/GalinaTop_BlairSkirt-MultiPastelSequins_Frontal.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
+                            <div class="overlay h-[5%] bottom-0 w-full bg-white absolute flex items-center justify-center">
+                              <div class="text-3xl flex flex-nowrap gap-4">
+                                  <p class="text-[12px] text-[#00000080]">XXS</p>
+                                  <p class="text-[12px] text-black">XS</p>
+                                  <p class="text-[12px] text-[#00000080]">S</p>
+                                  <p class="text-[12px] text-[#00000080]">M</p>
+                                  <p class="text-[12px] text-black">L</p>
+                                  <p class="text-[12px] text-black">XL</p>
+                                  <p class="text-[12px] text-[#00000080]">XXL</p>
+                              </div>
+                          </div>
                          </div>
                         <!-- Slider controls -->
                         <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#F8F7F7] pr-2 group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 1 1 5l4 4"/>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </span>
                         </button>
                         <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#F8F7F7] group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m1 9 4-4-4-4"/>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </span>
                         </button>
-                        <div class="overlay h-[5%] bottom-0 w-full bg-white absolute flex items-center justify-center">
-                          <div class="text-3xl flex flex-nowrap gap-4">
-                              <p class="text-[12px] text-[#00000080]">XXS</p>
-                              <p class="text-[12px] text-black">XS</p>
-                              <p class="text-[12px] text-[#00000080]">S</p>
-                              <p class="text-[12px] text-[#00000080]">M</p>
-                              <p class="text-[12px] text-black">L</p>
-                              <p class="text-[12px] text-black">XL</p>
-                              <p class="text-[12px] text-[#00000080]">XXL</p>
-                          </div>
-                      </div>
                     </div>
                   </div>
                 <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
                     <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
-                    <a href="" class="w-full text text-black">€620</a>
+                    <a href="" class="w-full text text-black">€620 →</a>
                 </div>
              </div>
 
 
-             <div class="carousel-item relative max-md:hidden  h-full w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+             <div class="carousel-item relative max-sm:opacity-0 sm:w-[50%]  h-full xl:w-[25%] flex-none bg-[#F8F7F7] text-white text-center p-12" id="carousel-item-1">
                 <div class="w-full h-[85%]">
                     <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
                         <!-- Carousel wrapper -->
@@ -335,17 +335,17 @@
                         </div>
                         <!-- Slider controls -->
                         <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#F8F7F7] pr-2 group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 1 1 5l4 4"/>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </span>
                         </button>
                         <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#F8F7F7] group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m1 9 4-4-4-4"/>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </span>
@@ -366,12 +366,12 @@
                 
                 <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
                     <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
-                    <a href="" class="w-full text text-black">€620</a>
+                    <a href="" class="w-full text text-black">€620 →</a>
                 </div>
             </div>
 
 
-            <div class="carousel-item relative max-md:hidden h-full w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+            <div class="carousel-item relative max-sm:bg-white max-sm:opacity-0 h-full w-[25%] flex-none bg-[#F8F7F7] text-white text-center p-12" id="carousel-item-1">
                 <div class="w-full h-[85%]">
                     <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
                         <!-- Carousel wrapper -->
@@ -395,17 +395,17 @@
                         </div>
                         <!-- Slider controls -->
                         <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#F8F7F7] pr-2 group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 1 1 5l4 4"/>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </span>
                         </button>
                         <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#F8F7F7] group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m1 9 4-4-4-4"/>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </span>
@@ -426,12 +426,12 @@
                 
                 <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
                     <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
-                    <a href="" class="w-full text text-black">€620</a>
+                    <a href="" class="w-full text text-black">€620 →</a>
                 </div>
             </div>
 
 
-            <div class="carousel-item relative max-md:hidden  h-full w-[25%] flex-none bg-[#ece6e6] text-white text-center p-12" id="carousel-item-1">
+            <div class="carousel-item relative max-sm:opacity-0 max-sm:bg-white h-full w-[25%] flex-none bg-[#F8F7F7] text-white text-center p-12" id="carousel-item-1">
                 <div class="w-full h-[85%]">
                     <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
                         <!-- Carousel wrapper -->
@@ -455,17 +455,17 @@
                         </div>
                         <!-- Slider controls -->
                         <button type="button" class="overlay absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-prev id="carousel-prev">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#ece6e6] pr-2 group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-r-full bg-[#F8F7F7] pr-2 group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 1 1 5l4 4"/>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </span>
                         </button>
                         <button type="button" class="overlay absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next id="carousel-next">
-                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#ece6e6] group-focus:outline-none">
+                            <span class="inline-flex items-center justify-center w-[35px] h-[60px] rounded-l-full pl-2 bg-[#F8F7F7] group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m1 9 4-4-4-4"/>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </span>
@@ -486,7 +486,7 @@
                 
                 <div class="w-full h-[15%] z-2000 relative flex flex-wrap mt-3">
                     <a href="" class="w-full text-black">Galina Top Multi Pastel Sequins</a>
-                    <a href="" class="w-full text text-black">€620</a>
+                    <a href="" class="w-full text text-black">€620 →</a>
                 </div>
             </div>
         </div>
