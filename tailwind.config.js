@@ -8,6 +8,9 @@ module.exports = {
           '100%': { transform: 'translateX(-100px)' },
         },
       },
+      screens: {
+        'main': '1100px', // Add custom breakpoint for 400px
+      },
       animation: {
         customAni: 'customAni 2s ease 0s 1 normal forwards',
       },
