@@ -919,6 +919,10 @@ video {
   height: 100%;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -1608,6 +1612,10 @@ a {
 
   .sm\:mt-\[30\%\] {
     margin-top: 30%;
+  }
+
+  .sm\:h-0\.5 {
+    height: 0.125rem;
   }
 
   .sm\:w-\[30\%\] {
